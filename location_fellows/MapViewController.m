@@ -8,20 +8,27 @@
 
 #import "MapViewController.h"
 #import <MapKit/MapKit.h>
+#import "UIKit/UIKit.h"
 
 @interface MapViewController ()
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 - (IBAction)firstLocation:(UIButton *)sender;
 - (IBAction)secondLocation:(UIButton *)sender;
 - (IBAction)thirdLocation:(UIButton *)sender;
-
-
+@property (strong, nonatomic) UIColor* blue;
 @end
 
 @implementation MapViewController
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self printboogers];
+    
+    _blue = [UIColor colorWithRed:1 green:0 blue:0 alpha:1];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -88,6 +95,12 @@
     
     [_mapView setRegion:region animated:YES];
 }
+
+
+- (void)printboogers{
+    NSLog(@"print boogers");
+}
+
 @end
 
 
